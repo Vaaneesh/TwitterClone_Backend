@@ -47,9 +47,18 @@ router.post("/:id",verifyToken,async(req,res)=>{
     })
     return res.send("tweet liked!");
 })
-// router.get("/:id",async(req,res)=>{
-//     cosnt id=req.params;
-// })
+router.get("/:id",verifyToken,async(req,res)=>{
+    const {id}=req.params;
+    let like=await prisma.like.findMany({
+        where:{
+            tweetid:parseInt(id)
+        },
+        select:{
+            user:true
+        }
+    });
+    res.send({like});
+})
 
 
 export default router;
