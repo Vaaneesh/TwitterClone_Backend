@@ -21,6 +21,8 @@ model User{
   password String 
   bio String?
   tweet Tweet[]
+  like Like[]
+  retweet ReTweet[]
 }
 model Tweet{
   id Int @id @default(autoincrement())
@@ -29,12 +31,23 @@ model Tweet{
   createAt DateTime @default(now())
   userid Int
   likecount Int @default(0)
+  retweetCount Int @default(0)
   user User @relation(fields: [userid],references: [id],onDelete: Cascade)
   like Like[]
+  retweet ReTweet[]
 }
 model Like{
   id Int @id @default(autoincrement())
   userId Int
   tweetid Int
+  user User @relation(fields: [userId],references: [id],onDelete: Cascade)
   tweet Tweet @relation(fields: [tweetid],references: [id],onDelete: Cascade)
+}
+
+model ReTweet{
+  id Int @id @default(autoincrement())
+  retweetby Int
+  tweetId Int
+  user User @relation(fields: [retweetby],references: [id],onDelete: Cascade)
+  tweet Tweet @relation(fields: [tweetId],references: [id],onDelete: Cascade)
 }

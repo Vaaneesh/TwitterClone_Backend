@@ -60,4 +60,7 @@ router.post("/:id", auth_1.verifyToken, (req, res) => __awaiter(void 0, void 0, 
     });
     return res.send("tweet liked!");
 }));
+// router.get("/:id",async(req,res)=>{
+//     cosnt id=req.params;
+// })
 exports.default = router;
