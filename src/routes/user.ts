@@ -26,7 +26,8 @@ router.get("/:id",async(req,res)=>{
     let user=await prisma.user.findUnique({
         where:{
             id
-        }
+        },
+        
     })
     res.send({user});
 })
@@ -44,12 +45,12 @@ router.get("/:username",async(req,res)=>{
                 }
                }
             ]
-        }
+        },
        
     })
     console.log({users});
 })
-router.delete("/:id",verifyToken,async(req,res)=>{
+router.delete("/22:id",verifyToken,async(req,res)=>{
      const {id} = req.body;
      if(id!=req.user.id) return res.send("not a valid request");
     let result= await prisma.user.delete({

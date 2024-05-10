@@ -13,7 +13,8 @@ export const createJwtToken=(user: {
 
 export const verifyToken=(req:Request,res:Response,next:NextFunction)=>{
     console.log(req.cookies);
-    let token=req.cookies.token;
+    let token=req.cookies.token 
+    // || req.header['Authorisation'];
     let decode=jwt.verify(token,secretKey);
     console.log(decode);
     if(decode){

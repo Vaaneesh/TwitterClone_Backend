@@ -37,7 +37,7 @@ router.get("/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     let user = yield prisma.user.findUnique({
         where: {
             id
-        }
+        },
     });
     res.send({ user });
 }));
@@ -55,7 +55,7 @@ router.get("/:username", (req, res) => __awaiter(void 0, void 0, void 0, functio
                     }
                 }
             ]
-        }
+        },
     });
     console.log({ users });
 }));

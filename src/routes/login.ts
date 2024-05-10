@@ -18,10 +18,14 @@ router.post("/",async(req,res)=>{
    if(user.password!=password){
     throw new Error ("Not a valid password");
    }
+   
+   
+   // if(user) res.send("User logedIn");
    // res.json("User logedIn successfully");
    let token= createJwtToken(user);
    res.cookie("token",token);
-   res.redirect("/");
+   res.send({token});
+   // res.redirect("/");
 })
 
 
