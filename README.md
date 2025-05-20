@@ -15,7 +15,6 @@
         <li><a href="#usage">Usage</a></li>
         <li><a href="#api-endpoints">API Endpoints</a></li>
         <li><a href="#contributing">Contributing</a></li>
-        <li><a href="#license">License</a></li>
     </ul>
     <h2 id="features">Features</h2>
     <ul>
@@ -78,8 +77,6 @@ cd twitter-clone-backend</code></pre>
         <li>Push your branch to your forked repository.</li>
         <li>Create a pull request to the main repository.</li>
     </ol>
-    <h2 id="license">License</h2>
-    <p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
     <hr>
     <p>Feel free to explore the repository, and enjoy contributing to the Twitter Clone Backend project! If you have any questions, don't hesitate to reach out.</p>
 </body>
